@@ -1,4 +1,4 @@
-def correct(s):
+def correct_symbol(s):
     mistake = {"0": "O", "5": "S", "1": "I"}
     for i in s:
         if i in mistake:
@@ -7,4 +7,4 @@ def correct(s):
 
 
 if __name__ == '__main__':
-    print(correct('PAR15'))
+    print(correct_symbol('PAR15'))
