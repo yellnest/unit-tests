@@ -1,3 +1,6 @@
+import math
+
+
 def correct_symbol(string):
     """
     1 тест
@@ -244,11 +247,44 @@ def strip_comments(string, markers):
 #     print(strip_comments('apples, pears # and bananas\ngrapes\nbananas !apples', ["#", "!"]))
 
 """ ВОТ пример разделения после встречи определённого символа"""
+
+
 # text = 'some string... this part will be removed.'
 # sep = '...'
 # stripped = text.split(sep)
 # print(stripped)
 
 
+def make_readable(s):
+    """
+    12 тест
+    Без знания %02d:%02d:%02d подобных конструкций сложно оказывается, надо не забыть разобраться в этой движухе
+    divmod делит и возвращает число и остаток от него результат такой же, как (a // b, a % b)
+    """
+    minutes, seconds = divmod(s, 60)
+    hours, minutes = divmod(minutes, 60)
+    return '%02d:%02d:%02d' % (hours, minutes, seconds)
+
+    # if s <= 59:
+    #     return f'00:00:{s:02}'
+    # elif s >= 60 and s >= 3599:
+    #     minutes = s / 60
+    #     seconds = minutes - int(minutes) - 0.40
+    #     return f'00:{int(minutes)}:{seconds}'
 
 
+if __name__ == '__main__':
+    print(make_readable(359999))
+
+# a = 3599
+# b = a / 60
+# c = b - int(b)
+# c -= 0.40
+
+print(divmod(359999, 60))
+
+
+# print(f'b = {b}')
+# print(f'c = {c}')
+# print(round(c, 1))
+# print(math.rount(c))
