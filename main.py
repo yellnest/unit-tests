@@ -1,5 +1,8 @@
 def correct_symbol(string):
-    """1 тест"""
+    """
+    1 тест
+    Заменяет определенные цифры которые похожи на буквы(этими же буквами)
+    """
     mistake = {"0": "O", "5": "S", "1": "I"}
     for item in string:
         if item in mistake:
@@ -8,7 +11,7 @@ def correct_symbol(string):
 
 
 def correct_symbol2(string):
-    """1 тест"""
+    """1 тест ч2"""
     return string.replace('1', 'I').replace('0', 'O').replace('5', 'S')
 
 
@@ -20,7 +23,7 @@ def correct_symbol2(string):
 def final_grade(exam, projects):
     """
     2 тест
-
+    Возвращает число баллов студента в зависимости от кол-во его экзаменов и проектов
     """
     if exam <= 0:
         raise ValueError('Число экзаменов не может быть меньше 0')
@@ -54,10 +57,12 @@ def square_sum(numbers):
     return answer
 
 
+"""2 тест ч2"""
 square_sum2 = lambda num: num ** 2
 
 
 def square_sum3(numbers):
+    """2 тест ч3"""
     return sum(number ** 2 for number in numbers)
 
 
@@ -120,6 +125,7 @@ def alphabet_position(text):
 
 
 def alphabet_position2(text):
+    """6 тест ч2"""
     alp = "abcdefghijklmnopqrstuvwxyz"
     a = []
     for c in text.lower():
@@ -151,6 +157,7 @@ def scramble(s1, s2):
 
 
 def scramble2(s1, s2):
+    """7 тест ч2"""
     for c in set(s2):
         if s1.count(c) < s2.count(c):
             return False
@@ -172,7 +179,9 @@ def cakes(recipe, available):
 
 
 def cake(recipe, available):
-    """Сверху хуйня только из-за else"""
+    """
+    Это написал потому что не понимал как делать такие циклы через else
+    """
     return min([available[i] // recipe[i] for i in recipe if i in available])
 
 
@@ -193,6 +202,7 @@ def generate_hashtag(s):
 
 
 def generate_hashtag2(s):
+    """9 тест ч2"""
     ans = '#' + str(s.title().replace(' ', ''))
     a = False
     return a if not s or len(s) > 140 else ans
@@ -220,18 +230,10 @@ def first_non_repeating_letter(string):
 
 def strip_comments(string, markers):
     """
+    11 тест
     Разделяет на словарь после одного markers
     strip удаляет определённые символы
     """
-    # for i in markers:
-    #     string = string.split(i)[0]
-    # return string
-    for i in markers:
-        string = string.replace(i, "\\")
-    print(string)
-
-
-def strip_comments2(string, markers):
     s_list = string.split('\n')
     for marker in markers:
         s_list = [item.split(marker)[0].strip() for item in s_list]
@@ -240,10 +242,13 @@ def strip_comments2(string, markers):
 
 # if __name__ == '__main__':
 #     print(strip_comments('apples, pears # and bananas\ngrapes\nbananas !apples', ["#", "!"]))
-#     print(strip_comments2('apples, pears # and bananas\ngrapes\nbananas !apples', ["#", "!"]))
 
 """ ВОТ пример разделения после встречи определённого символа"""
 # text = 'some string... this part will be removed.'
 # sep = '...'
 # stripped = text.split(sep)
 # print(stripped)
+
+
+
+
