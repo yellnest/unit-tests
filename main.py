@@ -297,6 +297,7 @@ def increment_string(strng):
 
 def increment_string2(strng):
     """
+    13 тест 2 часть
     rstrip возвращает копию строки с удаленными завершающими символами
     zfill вернет копию строки, у которой начало строки будет заполнено цифрой ASCII 0, до указанной длины width.
     """
@@ -307,9 +308,9 @@ def increment_string2(strng):
     return head + str(int(tail) + 1).zfill(len(tail))
 
 
-if __name__ == '__main__':
-    # print(increment_string('foo'))
-    print(increment_string2('foof0879'))
+# if __name__ == '__main__':
+# print(increment_string('foo'))
+# print(increment_string2('foof0879'))
 
 # a = '0f2f3f0'
 # l = ''
@@ -317,5 +318,40 @@ if __name__ == '__main__':
 #     if i.isdigit():
 #         l += i
 # g = 4
-
+# # Вот пример как можно выводить цифры с 0 впереди если изначально был 0
 # print(f'Answer: {int(l):{0}{g}}')
+
+
+def domain_name(url):
+    """
+    14 тест
+    Из url выводит только доменное имя
+    Но не работает если точек много, как исправить пока хз
+    Но в общем работает
+    """
+    dot = '.'
+    slash = '//'
+    # Конструкция как к примеру answer[0:3]
+    answer = url[url.find(dot) + len(dot):url.rfind(dot)]
+    if answer == '':
+        answer = url[url.find(slash) + len(slash):url.rfind(dot)]
+    return answer
+
+
+def domain_name_2(url):
+    """
+    14 тест часть 2.
+    Подсмотрел и понял, что замудрил, а всё было под носом.
+    Захватывайте только ту часть, которая не является http
+    А дальше по накатанной
+    """
+    return url.split("//")[-1].split("www.")[-1].split(".")[0]
+
+
+# if __name__ == '__main__':
+#     print(domain_name('www.xakep.ru'))
+#     print(domain_name('http://vk.com'))
+#     print(domain_name('http://www.google.com'))
+#     print(domain_name('https://translated.turbopages.org'))
+#     # но тут кстати неправильно выводит 2-я часть хоть за это горд
+#     print(domain_name_2('https://translated.turbopages.org'))
