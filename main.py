@@ -155,21 +155,21 @@ def scramble(s1, s2):
             c.pop(c.index(i))
     if ''.join(a) == s2:
         return True
-    else:
-        return False
+    return False
 
 
 def scramble2(s1, s2):
     """7 тест ч2"""
     for c in set(s2):
+        print(c)
         if s1.count(c) < s2.count(c):
             return False
     return True
 
 
 # if __name__ == '__main__':
-#     print(scramble('miahailmnqrbwbfuyl', 'wlmmrmluf'))
-#     print(scramble2('miahailmnqrbwbfuyl', 'wlmmrmluf'))
+#     print(scramble('cowdarfewqss', 'codewars'))
+# print(scramble2('miahailmnqrbwbfuyl', 'wlmmrmluf'))
 
 
 def cakes(recipe, available):
@@ -235,7 +235,7 @@ def strip_comments(string, markers):
     """
     11 тест
     Разделяет на словарь после одного markers
-    strip удаляет определённые символы
+    strip удаляет определённые символы из заданной строки
     """
     s_list = string.split('\n')
     for marker in markers:
@@ -258,6 +258,7 @@ def strip_comments(string, markers):
 def make_readable(s):
     """
     12 тест
+    Секунды переводит в минуты и часы
     Без знания %02d:%02d:%02d подобных конструкций сложно оказывается, надо не забыть разобраться в этой движухе
     divmod делит и возвращает число и остаток от него результат такой же, как (a // b, a % b)
     """
@@ -265,26 +266,56 @@ def make_readable(s):
     hours, minutes = divmod(minutes, 60)
     return '%02d:%02d:%02d' % (hours, minutes, seconds)
 
-    # if s <= 59:
-    #     return f'00:00:{s:02}'
-    # elif s >= 60 and s >= 3599:
-    #     minutes = s / 60
-    #     seconds = minutes - int(minutes) - 0.40
-    #     return f'00:{int(minutes)}:{seconds}'
+
+# if __name__ == '__main__':
+#     print(make_readable(129))
+
+
+def increment_string(strng):
+    """
+    13 тест
+    Ищет число в строке и прибавляет +1 к числу возвращая туже строку только с числом +1
+    Если strng = foobar001 должно вернуть foobar002 если foobar то foobar1 и.д
+    Не проходит из-за того что в середине строки встречаются цифры
+    Плохо читается тем не менее это решение
+    isdigit находит числа в строке и возвращает True если они там есть
+    """
+    string = ''
+    numbers = ''
+    if strng == '':
+        return '1'
+    for i in strng:
+        if i.isdigit():
+            numbers += i
+        else:
+            string += i
+    if numbers == '':
+        numbers = '0'
+    length = len(numbers)
+    return f'{string}{int(numbers) + 1:{0}{length}}'
+
+
+def increment_string2(strng):
+    """
+    rstrip возвращает копию строки с удаленными завершающими символами
+    zfill вернет копию строки, у которой начало строки будет заполнено цифрой ASCII 0, до указанной длины width.
+    """
+    head = strng.rstrip('0123456789')
+    tail = strng[len(head):]
+    if tail == "":
+        return strng + "1"
+    return head + str(int(tail) + 1).zfill(len(tail))
 
 
 if __name__ == '__main__':
-    print(make_readable(359999))
+    # print(increment_string('foo'))
+    print(increment_string2('foof0879'))
 
-# a = 3599
-# b = a / 60
-# c = b - int(b)
-# c -= 0.40
+# a = '0f2f3f0'
+# l = ''
+# for i in a:
+#     if i.isdigit():
+#         l += i
+# g = 4
 
-print(divmod(359999, 60))
-
-
-# print(f'b = {b}')
-# print(f'c = {c}')
-# print(round(c, 1))
-# print(math.rount(c))
+# print(f'Answer: {int(l):{0}{g}}')
