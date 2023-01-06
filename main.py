@@ -355,3 +355,39 @@ def domain_name_2(url):
 #     print(domain_name('https://translated.turbopages.org'))
 #     # но тут кстати неправильно выводит 2-я часть хоть за это горд
 #     print(domain_name_2('https://translated.turbopages.org'))
+
+
+def find_outlier(integers):
+    """
+    Тест 15.
+    Дается список с числами и только одно из них четное или нет.
+    Возвращает то единственное число которое не похоже на остальные если судить по чётности
+    """
+    evens = [i for i in integers if i % 2 == 0]
+    odds = [i for i in integers if i % 2 != 0]
+    return odds[0] if len(evens) > len(odds) else evens[0]
+
+
+# if __name__ == '__main__':
+#     print(find_outlier([2, 4, 6, 8, 10, 3]))
+#     print(find_outlier([160, 3, 1719, 19, 11, 13, -21]))
+
+
+def xo(s):
+    """
+    Тест 16.
+    Возвращает True если одинаковое количество x и o в тексте иначе False
+    """
+    x = 0
+    o = 0
+    for i in s.lower():
+        if 'x' in i:
+            x += 1
+        elif 'o' in i:
+            o += 1
+    return x == o
+
+
+# if __name__ == '__main__':
+#     print(xo('zpzpzppx'))
+
