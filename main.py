@@ -3,7 +3,7 @@ import math
 
 def correct_symbol(string):
     """
-    1 тест
+    Задача 1:
     Заменяет определенные цифры которые похожи на буквы(этими же буквами)
     """
     mistake = {"0": "O", "5": "S", "1": "I"}
@@ -25,7 +25,7 @@ def correct_symbol2(string):
 
 def final_grade(exam, projects):
     """
-    2 тест
+    Задача 2:
     Возвращает число баллов студента в зависимости от кол-во его экзаменов и проектов
     """
     if exam <= 0:
@@ -48,7 +48,7 @@ def final_grade(exam, projects):
 
 def square_sum(numbers):
     """
-    3 тест
+    Задача 3:
     Возвращает сумму чисел в квадрате
     """
     answer = 0
@@ -75,9 +75,9 @@ def square_sum3(numbers):
 #     print(square_sum3([0, 3, 4, 5]))
 
 
-def solution(s):
+def solution_gaps(s):
     """
-    4 тест
+    Задача 4:
     Разделяет слипшийся текст пробелами
     """
     s = s.split()
@@ -94,12 +94,12 @@ def solution(s):
 
 
 # if __name__ == '__main__':
-#     print(solution('companyOtherChildCallGet'))
+#     print(solution_gaps('companyOtherChildCallGet'))
 
 
 def likes(names):
     """
-    5 тест
+    Задача 5:
     Возвращает разный текст в зависимости от количества отправленных имён
     """
     if len(names) == 0:
@@ -120,7 +120,7 @@ def likes(names):
 
 def alphabet_position(text):
     """
-    6 тест
+    Задача 6:
     Возвращает нумерацию(в алфавите) каждой буквы из строки
     """
     alp = "abcdefghijklmnopqrstuvwxyz"
@@ -144,7 +144,7 @@ def alphabet_position2(text):
 
 def scramble(s1, s2):
     """
-    7 тест, но не проходит из-за скорости.
+    Задача 9, но не проходит из-за скорости:
     Проверяет можно ли из случайных букв s1 собрать слово из s2
     """
     a = []
@@ -159,7 +159,9 @@ def scramble(s1, s2):
 
 
 def scramble2(s1, s2):
-    """7 тест ч2"""
+    """
+    Задача 7 ч2 :
+    """
     for c in set(s2):
         print(c)
         if s1.count(c) < s2.count(c):
@@ -174,7 +176,7 @@ def scramble2(s1, s2):
 
 def cakes(recipe, available):
     """
-    8 тест
+    Задача 8:
     Проверяет сколько можно сделать тортов из доступных
     возвращает число
     """
@@ -195,7 +197,7 @@ def cake(recipe, available):
 
 def generate_hashtag(s):
     """
-    9 тест
+    Задача 9:
     Добавление # и удаление пробелов
     Если больше 140 или пустой то False
     """
@@ -205,7 +207,9 @@ def generate_hashtag(s):
 
 
 def generate_hashtag2(s):
-    """9 тест ч2"""
+    """
+    Задача 9 ч2:
+    """
     ans = '#' + str(s.title().replace(' ', ''))
     a = False
     return a if not s or len(s) > 140 else ans
@@ -218,7 +222,7 @@ def generate_hashtag2(s):
 
 def first_non_repeating_letter(string):
     """
-    10 тест
+    Задача 10:
     находит первый неповторяющиеся символ
     """
     for i in string:
@@ -233,7 +237,7 @@ def first_non_repeating_letter(string):
 
 def strip_comments(string, markers):
     """
-    11 тест
+    Задача 11:
     Разделяет на словарь после одного markers
     strip удаляет определённые символы из заданной строки
     """
@@ -257,7 +261,7 @@ def strip_comments(string, markers):
 
 def make_readable(s):
     """
-    12 тест
+    Задача 12:
     Секунды переводит в минуты и часы
     Без знания %02d:%02d:%02d подобных конструкций сложно оказывается, надо не забыть разобраться в этой движухе
     divmod делит и возвращает число и остаток от него результат такой же, как (a // b, a % b)
@@ -273,7 +277,7 @@ def make_readable(s):
 
 def increment_string(strng):
     """
-    13 тест
+    Задача 13:
     Ищет число в строке и прибавляет +1 к числу возвращая туже строку только с числом +1
     Если strng = foobar001 должно вернуть foobar002 если foobar то foobar1 и.д
     Не проходит из-за того что в середине строки встречаются цифры
@@ -297,7 +301,7 @@ def increment_string(strng):
 
 def increment_string2(strng):
     """
-    13 тест 2 часть
+    Задача 13 2 часть:
     rstrip возвращает копию строки с удаленными завершающими символами
     zfill вернет копию строки, у которой начало строки будет заполнено цифрой ASCII 0, до указанной длины width.
     """
@@ -324,7 +328,7 @@ def increment_string2(strng):
 
 def domain_name(url):
     """
-    14 тест
+    Задача 14:
     Из url выводит только доменное имя
     Но не работает если точек много, как исправить пока хз
     Но в общем работает
@@ -340,7 +344,7 @@ def domain_name(url):
 
 def domain_name_2(url):
     """
-    14 тест часть 2.
+    Задача 14 часть 2:
     Подсмотрел и понял, что замудрил, а всё было под носом.
     Захватывайте только ту часть, которая не является http
     А дальше по накатанной
@@ -359,7 +363,7 @@ def domain_name_2(url):
 
 def find_outlier(integers):
     """
-    Тест 15.
+    Задача 15:
     Дается список с числами и только одно из них четное или нет.
     Возвращает то единственное число которое не похоже на остальные если судить по чётности
     """
@@ -375,7 +379,7 @@ def find_outlier(integers):
 
 def xo(s):
     """
-    Тест 16.
+    Задача 16:
     Возвращает True если одинаковое количество x и o в тексте иначе False
     """
     x = 0
@@ -391,3 +395,82 @@ def xo(s):
 # if __name__ == '__main__':
 #     print(xo('zpzpzppx'))
 
+
+def friend(x):
+    """
+    Задача 17 lite:
+    Ну тут даже объяснять не надо
+    """
+    l = [i for i in x if len(i) == 4]
+    return [s for s in l if not s.isdigit()]
+
+
+# if __name__ == '__main__':
+#     print(friend(["Ryan", "Jimmy", "1234", "4", "Cool Man"]))
+
+
+def century(year):
+    """
+    Задача 18:
+    Возвращает в каком веке определённый год
+    """
+    return year // 100 if year % 100 == 0 else year // 100 + 1
+
+
+# if __name__ == '__main__':
+#     print(century(1701))
+
+
+def spin_words(sentence):
+    """
+    Задача 19:
+    Если длинна слова в тексте >= 5 возвращает reverse этого слова
+    """
+    return ' '.join([i[::-1] if len(i) >= 5 else i for i in sentence.split(' ')])
+
+
+# if __name__ == '__main__':
+#     print(spin_words('hi koe Welcome toes'))
+
+class Isogram:
+    """
+    Первый класс
+    Задача 20:
+    Если строке нет повторяющихся символов, то True else False
+    """
+
+    def __init__(self, string):
+        self.string = string
+
+    def is_isogram(self):
+        return len(self.string) == len(set(self.string.lower()))
+
+
+# if __name__ == '__main__':
+#     dermat = Isogram('Dermatoglyphicss')
+#     print(dermat.is_isogram())
+#     print(Isogram.is_isogram(dermat))
+
+
+def solution_multiples(number):
+    """
+    Задача 21:
+    Возвращает сумму всех чисел кратных 3 или 5
+    """
+    return sum(i for i in range(number) if i % 3 == 0 or i % 5 == 0)
+
+
+# if __name__ == '__main__':
+#     print(solution_multiples(10))
+
+def high_and_low(numbers):
+    """
+    Задача 22:
+    Возвращает самое мин и макс число из строки
+    """
+    a = [int(i) for i in numbers.split()]
+    return f'{max(a)} {min(a)}'
+
+
+if __name__ == '__main__':
+    print(high_and_low("8 3 -5 42 -1 0 0 -9 4 7 4 -4"))
